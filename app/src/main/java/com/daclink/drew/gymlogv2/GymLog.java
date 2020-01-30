@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 import com.daclink.drew.gymlogv2.DB.AppDatabase;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity(tableName = AppDatabase.GYMLOG_TABLE)
 public class GymLog {
@@ -64,6 +65,22 @@ public class GymLog {
 
     public void setDate(Date date) {
         mDate = date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GymLog gymLog = (GymLog) o;
+        return  mWeight == gymLog.mWeight &&
+                mReps == gymLog.mReps &&
+                mExercise.equals(gymLog.mExercise) &&
+                mDate.equals(gymLog.mDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mLogId, mExercise, mWeight, mReps, mDate);
     }
 
     @Override
