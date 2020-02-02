@@ -12,6 +12,7 @@ import com.daclink.drew.gymlogv2.GymLog;
 public abstract class AppDatabase extends RoomDatabase {
     public static final String dbName="db-gymlog";
     public static final String GYMLOG_TABLE="gymlog";
+    public static final String USER_TABLE="user";
     public abstract GymLogDAO getGymLogDAO();
 }
 
