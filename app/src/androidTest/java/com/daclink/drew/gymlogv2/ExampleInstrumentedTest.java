@@ -13,6 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.internal.matchers.Not;
 
 import java.util.List;
 
@@ -75,6 +76,8 @@ public class ExampleInstrumentedTest {
         testValue.setReps(42);
         testValue.setWeight(23);
         gymLogDao.update(testValue);
+
+//        Not sure how we are getting out of this one...
 
         List<GymLog> DBvalueUpdated = gymLogDao.getGymLogs();
         GymLog updated = DBvalueUpdated.get(0);
