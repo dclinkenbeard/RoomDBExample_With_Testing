@@ -68,6 +68,20 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void update() {
+        GymLog testValue = new GymLog("Squat",285,6);
+        gymLogDao.insert(testValue);
+        List<GymLog> DBvalue = gymLogDao.getGymLogs();
+        testValue = DBvalue.get(0);
+        testValue.setExercise("Update");
+        testValue.setReps(42);
+        testValue.setWeight(23);
+        gymLogDao.update(testValue);
+
+        List<GymLog> DBvalueUpdated = gymLogDao.getGymLogs();
+        GymLog updated = DBvalueUpdated.get(0);
+        assertEquals(testValue.getExercise(),updated.getExercise());
+
+
     }
 
     @Test

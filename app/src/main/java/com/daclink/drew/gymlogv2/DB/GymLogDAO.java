@@ -25,6 +25,6 @@ public interface GymLogDAO {
     List<GymLog> getGymLogs();
 
     @Query("SELECT * FROM " + AppDatabase.GYMLOG_TABLE + " WHERE mLogId = :logID")
-    GymLog getQuestionWithId(int logID);
+    GymLog getGymLogWithId(int logID);
 }
 
