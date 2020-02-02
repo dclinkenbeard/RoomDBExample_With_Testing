@@ -42,7 +42,6 @@ public class ExampleInstrumentedTest {
                 .allowMainThreadQueries()
                 .build();
 
-
         gymLogDao = db.getGymLogDAO();
     }
 
